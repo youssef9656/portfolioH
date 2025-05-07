@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets | Youssef Hamraoui</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<section class="work" id="work">
+  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projets <span>Réalisés</span></h2>
+
+  <div id="filters" class="button-group">
+    <button class="btn is-checked" data-filter="*">Tous</button>
+    <button class="btn" data-filter=".php">PHP / Laravel</button>
+    <button class="btn" data-filter=".node">Node.js / API</button>
+    <button class="btn" data-filter=".frontend">Frontend</button>
+    <button class="btn" data-filter=".team">Équipe</button>
+  </div>
+
+  <div class="box-container">
+    <div class="box tilt php">
+      <img src="/assets/images/projects/pos.jpg" alt="POS Project" />
+      <div class="content">
+        <div class="tag"><h3>POS - Gestion de stock</h3></div>
+        <div class="desc">
+          <p>Système de gestion de stock avec lots, sous-lots, filtres dynamiques, graphique.</p>
+          <div class="btns">
+            <a href="#" class="btn"><i class="fas fa-eye"></i> View</a>
+            <a href="#" class="btn">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box tilt frontend">
+      <img src="/assets/images/projects/landing.jpg" alt="Landing Page" />
+      <div class="content">
+        <div class="tag"><h3>Landing Page</h3></div>
+        <div class="desc">
+          <p>Page de présentation responsive, optimisée SEO.</p>
+          <div class="btns">
+            <a href="https://youssef9656.github.io/Landing-Pages/" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            <a href="https://github.com/Youssef9656/Landing-Pages" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box tilt php">
+      <img src="/assets/images/projects/mental.jpg" alt="Rendez-vous Santé" />
+      <div class="content">
+        <div class="tag"><h3>Santé mentale - Rendez-vous</h3></div>
+        <div class="desc">
+          <p>Application de réservation avec produits/formations. Objectif : autonomie des jeunes.</p>
+          <div class="btns">
+            <a href="#" class="btn"><i class="fas fa-eye"></i> View</a>
+            <a href="#" class="btn">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box tilt node">
+      <img src="/assets/images/projects/api.jpg" alt="API Node" />
+      <div class="content">
+        <div class="tag"><h3>API RESTful - Node.js</h3></div>
+        <div class="desc">
+          <p>API sécurisée développée avec Express.js et Docker, pour une gestion interne automatisée.</p>
+          <div class="btns">
+            <a href="#" class="btn"><i class="fas fa-eye"></i> View</a>
+            <a href="#" class="btn">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box tilt team">
+      <img src="/assets/images/projects/team.jpg" alt="Projet Équipe" />
+      <div class="content">
+        <div class="tag"><h3>Projet en Équipe</h3></div>
+        <div class="desc">
+          <p>Application collaborative en React, méthode agile, coordination via GitHub.</p>
+          <div class="btns">
+            <a href="#" class="btn"><i class="fas fa-eye"></i> View</a>
+            <a href="#" class="btn">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="backbtn">
+    <a href="/#work" class="btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Retour à l'accueil</span>
+    </a>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+  var $grid = $('.box-container').isotope({
+    itemSelector: '.box',
+    layoutMode: 'fitRows'
+  });
+  $('#filters').on('click', 'button', function () {
+    $('#filters button').removeClass('is-checked');
+    $(this).addClass('is-checked');
+    var filterValue = $(this).attr('data-filter');
+    $grid.isotope({ filter: filterValue });
+  });
+</script>
+</body>
+</html>
